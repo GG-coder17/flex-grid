@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 4 — CSS Grid Básico: Galería de Fotos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       EJERCICIO 4: Galería de Fotos con CSS Grid
+       ============================================================
+       OBJETIVO: Aprender a definir columnas, filas, gap y el
+       uso de repeat() y auto-fill/auto-fit.
+
+       RESULTADO ESPERADO:
+       ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐
+       │  1   │ │  2   │ │  3   │ │  4   │
+       └──────┘ └──────┘ └──────┘ └──────┘
+       ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐
+       │  5   │ │  6   │ │  7   │ │  8   │
+       └──────┘ └──────┘ └──────┘ └──────┘
+
+       PARTE B (destacada):
+       ┌──────────────┐ ┌──────┐
+       │  Foto 1      │ │  2   │  ← item 1 ocupa 2 columnas
+       │  (2 cols)    │ └──────┘
+       └──────────────┘ ┌──────┐
+                        │  3   │
+                        └──────┘
+
+       TUS TAREAS (busca los comentarios TODO en styles.css):
+       1. Definir columnas con grid-template-columns y repeat()
+       2. Definir filas automáticas con grid-auto-rows
+       3. Agregar gap entre celdas
+       4. Hacer que un ítem ocupe múltiples columnas/filas
+       5. Usar auto-fill para que las columnas sean responsivas
+  ============================================================ -->
+
+  <div class="page">
+
+    <!-- PARTE A: Galería fija de 4 columnas -->
+    <section class="section">
+      <h2 class="section__title">Parte A — Grid fijo (4 columnas)</h2>
+      <p class="section__hint">Define 4 columnas iguales con <code>repeat()</code> y filas automáticas de 160px.</p>
+
+      <div class="gallery gallery--fixed">
+        <div class="gallery__item gallery__item--c1">📷 Foto 1</div>
+        <div class="gallery__item gallery__item--c2">📷 Foto 2</div>
+        <div class="gallery__item gallery__item--c3">📷 Foto 3</div>
+        <div class="gallery__item gallery__item--c4">📷 Foto 4</div>
+        <div class="gallery__item gallery__item--c5">📷 Foto 5</div>
+        <div class="gallery__item gallery__item--c6">📷 Foto 6</div>
+        <div class="gallery__item gallery__item--c7">📷 Foto 7</div>
+        <div class="gallery__item gallery__item--c8">📷 Foto 8</div>
+      </div>
+    </section>
+
+    <!-- PARTE B: Ítems que abarcan varias celdas -->
+    <section class="section">
+      <h2 class="section__title">Parte B — Ítems destacados (<code>grid-column</code> / <code>grid-row</code>)</h2>
+      <p class="section__hint">
+        Haz que "Foto 1" ocupe 2 columnas y "Foto 3" ocupe 2 filas.
+      </p>
+
+      <div class="gallery gallery--featured">
+        <div class="gallery__item gallery__item--c1 gallery__item--span-col">📷 Foto 1 (2 cols)</div>
+        <div class="gallery__item gallery__item--c2">📷 Foto 2</div>
+        <div class="gallery__item gallery__item--c3 gallery__item--span-row">📷 Foto 3 (2 filas)</div>
+        <div class="gallery__item gallery__item--c4">📷 Foto 4</div>
+        <div class="gallery__item gallery__item--c5">📷 Foto 5</div>
+        <div class="gallery__item gallery__item--c6">📷 Foto 6</div>
+      </div>
+    </section>
+
+    <!-- PARTE C: auto-fill responsivo -->
+    <section class="section">
+      <h2 class="section__title">Parte C — Columnas responsivas con <code>auto-fill</code> y <code>minmax()</code></h2>
+      <p class="section__hint">
+        Usa <code>repeat(auto-fill, minmax(200px, 1fr))</code> para crear columnas
+        que se adapten automáticamente al ancho del contenedor.
+        Cambia el ancho del navegador para ver el efecto.
+      </p>
+
+      <div class="gallery gallery--responsive">
+        <div class="gallery__item gallery__item--c1">📷 Foto 1</div>
+        <div class="gallery__item gallery__item--c2">📷 Foto 2</div>
+        <div class="gallery__item gallery__item--c3">📷 Foto 3</div>
+        <div class="gallery__item gallery__item--c4">📷 Foto 4</div>
+        <div class="gallery__item gallery__item--c5">📷 Foto 5</div>
+        <div class="gallery__item gallery__item--c6">📷 Foto 6</div>
+        <div class="gallery__item gallery__item--c7">📷 Foto 7</div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

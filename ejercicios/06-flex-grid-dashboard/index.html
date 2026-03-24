@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 6 — Flex + Grid: Dashboard Completo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       EJERCICIO 6: Dashboard — Combinando Flexbox y Grid
+       ============================================================
+       OBJETIVO: En este ejercicio final integras lo aprendido:
+       - CSS Grid para el layout macro de la página
+       - CSS Grid para distribuir widgets en el área central
+       - Flexbox para el interior de cada componente (navbar,
+         tarjetas, listas)
+
+       No hay TODOs individuales: el archivo styles.css está
+       completamente en blanco. Debes escribir todo el CSS desde
+       cero siguiendo los wireframes de abajo.
+
+       WIREFRAME GENERAL:
+       ┌─────────────────────────────────────────────┐
+       │                  TOPBAR                     │  h: 60px
+       ├───────────┬─────────────────────────────────┤
+       │           │  ┌────┐ ┌────┐ ┌────┐ ┌────┐   │
+       │  SIDEBAR  │  │KPI │ │KPI │ │KPI │ │KPI │   │  auto
+       │  (220px)  │  └────┘ └────┘ └────┘ └────┘   │
+       │           │  ┌──────────────┐ ┌───────────┐ │
+       │           │  │  CHART BIG   │ │ CHART SM  │ │  auto
+       │           │  └──────────────┘ └───────────┘ │
+       │           │  ┌──────────────────────────────┐│
+       │           │  │       TABLA DE ACTIVIDAD      ││  auto
+       │           │  └──────────────────────────────┘│
+       └───────────┴─────────────────────────────────┘
+
+       PISTAS:
+       - El layout global usa grid-template-areas (topbar, sidebar, main)
+       - Los KPIs usan grid con repeat(auto-fill, minmax(180px, 1fr))
+       - Los charts usan grid de 2 columnas (2fr 1fr)
+       - Dentro de cada widget usa Flexbox para el contenido
+       - La topbar usa Flexbox con justify-content: space-between
+  ============================================================ -->
+
+  <div class="app">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar__left">
+        <span class="topbar__logo">⚡ Flux</span>
+        <span class="topbar__page">Dashboard</span>
+      </div>
+      <div class="topbar__right">
+        <input class="topbar__search" type="search" placeholder="Buscar..." />
+        <button class="topbar__notif">🔔</button>
+        <div class="topbar__avatar">LB</div>
+      </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar__nav">
+        <a class="sidebar__link sidebar__link--active" href="#">📊 Dashboard</a>
+        <a class="sidebar__link" href="#">📁 Proyectos</a>
+        <a class="sidebar__link" href="#">👥 Equipo</a>
+        <a class="sidebar__link" href="#">📈 Analítica</a>
+        <a class="sidebar__link" href="#">🧾 Facturación</a>
+        <a class="sidebar__link" href="#">⚙️ Ajustes</a>
+      </nav>
+      <div class="sidebar__footer">
+        <div class="sidebar__user">
+          <div class="sidebar__user-avatar">LB</div>
+          <div>
+            <p class="sidebar__user-name">Luis Bertel</p>
+            <p class="sidebar__user-role">Admin</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi kpi--blue">
+          <span class="kpi__icon">👤</span>
+          <div>
+            <p class="kpi__value">8,240</p>
+            <p class="kpi__label">Usuarios</p>
+          </div>
+          <span class="kpi__delta kpi__delta--up">+12%</span>
+        </div>
+        <div class="kpi kpi--green">
+          <span class="kpi__icon">💰</span>
+          <div>
+            <p class="kpi__value">$42,800</p>
+            <p class="kpi__label">Ingresos</p>
+          </div>
+          <span class="kpi__delta kpi__delta--up">+8.3%</span>
+        </div>
+        <div class="kpi kpi--purple">
+          <span class="kpi__icon">🛒</span>
+          <div>
+            <p class="kpi__value">1,540</p>
+            <p class="kpi__label">Órdenes</p>
+          </div>
+          <span class="kpi__delta kpi__delta--down">-2%</span>
+        </div>
+        <div class="kpi kpi--orange">
+          <span class="kpi__icon">⭐</span>
+          <div>
+            <p class="kpi__value">4.87</p>
+            <p class="kpi__label">Rating</p>
+          </div>
+          <span class="kpi__delta kpi__delta--up">+0.2</span>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-grid">
+        <div class="chart chart--big">
+          <div class="chart__header">
+            <h3>Ventas mensuales</h3>
+            <select><option>Últimos 6 meses</option></select>
+          </div>
+          <div class="chart__body">
+            <!-- Barras simuladas -->
+            <div class="bar-chart">
+              <div class="bar bar--1"><span>Ene</span></div>
+              <div class="bar bar--2"><span>Feb</span></div>
+              <div class="bar bar--3"><span>Mar</span></div>
+              <div class="bar bar--4"><span>Abr</span></div>
+              <div class="bar bar--5"><span>May</span></div>
+              <div class="bar bar--6"><span>Jun</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart chart--small">
+          <div class="chart__header">
+            <h3>Fuentes de tráfico</h3>
+          </div>
+          <div class="chart__body">
+            <ul class="source-list">
+              <li class="source-list__item">
+                <span class="source-list__dot source-list__dot--blue"></span>
+                <span class="source-list__name">Orgánico</span>
+                <span class="source-list__value">42%</span>
+              </li>
+              <li class="source-list__item">
+                <span class="source-list__dot source-list__dot--green"></span>
+                <span class="source-list__name">Directo</span>
+                <span class="source-list__value">28%</span>
+              </li>
+              <li class="source-list__item">
+                <span class="source-list__dot source-list__dot--purple"></span>
+                <span class="source-list__name">Social</span>
+                <span class="source-list__value">18%</span>
+              </li>
+              <li class="source-list__item">
+                <span class="source-list__dot source-list__dot--orange"></span>
+                <span class="source-list__name">Email</span>
+                <span class="source-list__value">12%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de actividad -->
+      <div class="activity">
+        <div class="activity__header">
+          <h3>Actividad reciente</h3>
+          <button class="activity__btn">Ver todo</button>
+        </div>
+        <table class="activity__table">
+          <thead>
+            <tr>
+              <th>Usuario</th>
+              <th>Acción</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana García</td>
+              <td>Nuevo proyecto creado</td>
+              <td>Hoy, 10:23</td>
+              <td><span class="badge badge--green">Completado</span></td>
+            </tr>
+            <tr>
+              <td>Carlos Ruiz</td>
+              <td>Factura enviada #1042</td>
+              <td>Hoy, 09:17</td>
+              <td><span class="badge badge--yellow">Pendiente</span></td>
+            </tr>
+            <tr>
+              <td>Marta López</td>
+              <td>Reporte mensual generado</td>
+              <td>Ayer, 18:05</td>
+              <td><span class="badge badge--green">Completado</span></td>
+            </tr>
+            <tr>
+              <td>Jorge Pérez</td>
+              <td>Error en integración API</td>
+              <td>Ayer, 16:42</td>
+              <td><span class="badge badge--red">Error</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

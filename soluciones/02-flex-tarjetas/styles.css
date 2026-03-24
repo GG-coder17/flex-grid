@@ -1,0 +1,73 @@
+/* ============================================================
+   SOLUCIÓN — Ejercicio 2: Tarjetas de Productos
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #333; }
+
+.page { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+.page__title { font-size: 2rem; margin-bottom: 2rem; color: #1a1a2e; }
+
+.products {
+  /* TODO 1 ✓ */ display: flex;
+  /* TODO 2 ✓ */ flex-wrap: wrap;
+  /* TODO 3 ✓ */ gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  /* TODO 4 ✓ */ flex-basis: calc(33.333% - 1rem);
+  /* TODO 5 ✓ */ flex-grow: 1;
+  /* TODO 6 ✓ */ display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.card__image { height: 180px; }
+.card__image--blue   { background: linear-gradient(135deg, #667eea, #764ba2); }
+.card__image--green  { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.card__image--red    { background: linear-gradient(135deg, #f7971e, #ffd200); }
+.card__image--purple { background: linear-gradient(135deg, #c471f5, #fa71cd); }
+.card__image--orange { background: linear-gradient(135deg, #f093fb, #f5576c); }
+
+.card__body {
+  padding: 1.2rem;
+  /* TODO 7 ✓ */ display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card__badge {
+  display: inline-block;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card__badge--sale { background: #e94560; }
+
+.card__title { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+
+.card__desc {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.5;
+  /* TODO 8 ✓ */ flex-grow: 1;
+}
+
+.card__price { font-size: 1.4rem; font-weight: 700; color: #e94560; margin-top: 1rem; }

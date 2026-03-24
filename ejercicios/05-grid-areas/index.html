@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 5 — CSS Grid: Layout de Página con Áreas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       EJERCICIO 5: Layout de Página Completo con grid-template-areas
+       ============================================================
+       OBJETIVO: Construir el layout clásico de una página web
+       usando grid-template-areas y la propiedad grid-area.
+
+       RESULTADO ESPERADO:
+       ┌──────────────────────────────┐
+       │           HEADER             │  ← ocupa todo el ancho
+       ├────────┬─────────────────────┤
+       │        │                     │
+       │ SIDEBAR│       MAIN          │  ← sidebar 250px, main 1fr
+       │        │                     │
+       ├────────┴──────────┬──────────┤
+       │      FOOTER L     │ FOOTER R │  ← footer en 2 columnas
+       └───────────────────┴──────────┘
+
+       TUS TAREAS (busca los comentarios TODO en styles.css):
+       1. Definir grid-template-areas
+       2. Definir columnas y filas
+       3. Asignar grid-area a cada hijo
+       4. BONUS: hacer el layout responsive (sidebar abajo en móvil)
+  ============================================================ -->
+
+  <div class="layout">
+
+    <header class="layout__header">
+      <div class="layout__header-brand">📄 MiApp</div>
+      <nav class="layout__header-nav">
+        <a href="#">Dashboard</a>
+        <a href="#">Proyectos</a>
+        <a href="#">Equipo</a>
+      </nav>
+      <div class="layout__header-user">👤 Ana G.</div>
+    </header>
+
+    <aside class="layout__sidebar">
+      <h3>Menú</h3>
+      <ul>
+        <li>📊 Resumen</li>
+        <li>📁 Proyectos</li>
+        <li>👥 Usuarios</li>
+        <li>⚙️ Configuración</li>
+        <li>🔔 Notificaciones</li>
+      </ul>
+    </aside>
+
+    <main class="layout__main">
+      <h1>Dashboard Principal</h1>
+      <p>Aquí va el contenido principal de la aplicación.</p>
+
+      <!-- Mini-grid de estadísticas dentro del main -->
+      <div class="stats">
+        <div class="stat stat--blue">
+          <span class="stat__value">1,284</span>
+          <span class="stat__label">Usuarios activos</span>
+        </div>
+        <div class="stat stat--green">
+          <span class="stat__value">98.2%</span>
+          <span class="stat__label">Uptime del mes</span>
+        </div>
+        <div class="stat stat--purple">
+          <span class="stat__value">342</span>
+          <span class="stat__label">Proyectos</span>
+        </div>
+        <div class="stat stat--orange">
+          <span class="stat__value">47 ms</span>
+          <span class="stat__label">Latencia promedio</span>
+        </div>
+      </div>
+
+      <div class="content-placeholder">
+        <p>Gráfica de actividad — contenido de ejemplo</p>
+      </div>
+    </main>
+
+    <footer class="layout__footer">
+      <span>© 2026 MiApp</span>
+      <span>Todos los derechos reservados</span>
+      <span>v2.1.0</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>

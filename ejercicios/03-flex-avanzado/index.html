@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 3 — Flexbox Avanzado: Perfil de Usuario</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       EJERCICIO 3: Perfil de Usuario — Flexbox Avanzado
+       ============================================================
+       OBJETIVO: Practicar align-self, order, flex-shrink y
+       el shorthand flex:  flex-grow  flex-shrink  flex-basis.
+
+       RESULTADO ESPERADO:
+       ┌───────────────────────────────────────────────────┐
+       │  [Avatar]  Ana García          [Editar perfil]    │
+       │            Desarrolladora Full Stack              │
+       │            ★ 4.9  |  📁 132 proyectos            │
+       └───────────────────────────────────────────────────┘
+
+       PARTE B — Reordenar con "order":
+       El botón "Seguir" debe aparecer visualmente ANTES del
+       nombre aunque en el HTML esté después.
+
+       TUS TAREAS (busca los comentarios TODO en styles.css):
+       1. Shorthand `flex` en varias secciones
+       2. align-self para alinear el botón de forma diferente
+       3. flex-shrink para que el avatar nunca se encoja
+       4. Cambiar el orden visual con `order`
+  ============================================================ -->
+
+  <!-- PARTE A: Tarjeta de perfil -->
+  <section class="section">
+    <h2 class="section__title">Parte A — Tarjeta de perfil</h2>
+
+    <div class="profile-card">
+      <div class="profile-card__avatar">AG</div>
+
+      <div class="profile-card__info">
+        <h2 class="profile-card__name">Ana García</h2>
+        <p class="profile-card__role">Desarrolladora Full Stack</p>
+        <div class="profile-card__stats">
+          <span>⭐ 4.9</span>
+          <span>|</span>
+          <span>📁 132 proyectos</span>
+          <span>|</span>
+          <span>🌐 Colombia</span>
+        </div>
+      </div>
+
+      <button class="profile-card__btn">Editar perfil</button>
+    </div>
+  </section>
+
+  <!-- PARTE B: Cambio de orden visual -->
+  <section class="section">
+    <h2 class="section__title">Parte B — Reordenar con <code>order</code></h2>
+    <p class="section__hint">
+      El botón "Seguir" está al <em>final</em> del HTML, pero debe verse <em>primero</em>
+      (antes del nombre). Usa la propiedad <code>order</code> sin tocar el HTML.
+    </p>
+
+    <div class="order-demo">
+      <div class="order-demo__name">Carlos Mendoza</div>
+      <div class="order-demo__role">Diseñador UX</div>
+      <!-- Este botón debe verse PRIMERO visualmente -->
+      <button class="order-demo__follow">Seguir</button>
+    </div>
+  </section>
+
+  <!-- PARTE C: Crecimiento controlado -->
+  <section class="section">
+    <h2 class="section__title">Parte C — flex-grow y flex-shrink</h2>
+    <p class="section__hint">
+      La barra de búsqueda debe ocupar todo el espacio disponible.
+      El ícono de lupa NO debe crecer ni encoger.
+    </p>
+
+    <div class="search-bar">
+      <span class="search-bar__icon">🔍</span>
+      <input class="search-bar__input" type="text" placeholder="Buscar proyectos..." />
+      <button class="search-bar__btn">Buscar</button>
+    </div>
+  </section>
+
+</body>
+</html>

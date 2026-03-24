@@ -1,0 +1,58 @@
+/* ============================================================
+   EJERCICIO 6 — Dashboard Completo: Flex + Grid desde cero
+   ============================================================
+   Este archivo está INTENCIONALMENTE VACÍO.
+   Tu misión es escribir todo el CSS necesario para replicar
+   el wireframe descrito en el archivo index.html.
+
+   CHECKLIST de lo que debes implementar:
+
+   LAYOUT GENERAL (CSS Grid):
+   [ ] .app → grid con áreas: topbar / sidebar+main
+   [ ] Columna sidebar fija en 220px, main en 1fr
+   [ ] Fila topbar en 60px, contenido en 1fr
+
+   TOPBAR (Flexbox):
+   [ ] .topbar → flex, justify-content: space-between, align-items: center
+   [ ] .topbar__left → flex con gap para logo y nombre de página
+   [ ] .topbar__right → flex con gap para búsqueda, notif y avatar
+
+   SIDEBAR (Flexbox):
+   [ ] .sidebar → flex en columna, justify-content: space-between
+   [ ] .sidebar__nav → flex en columna con gap
+   [ ] .sidebar__link → flex para el ícono y texto
+   [ ] .sidebar__user → flex con gap para avatar e info
+
+   KPIs (CSS Grid):
+   [ ] .kpi-grid → repeat(auto-fill, minmax(180px, 1fr)), gap
+   [ ] .kpi → flex con gap, align-items: center
+
+   CHARTS (CSS Grid):
+   [ ] .charts-grid → 2 columnas (2fr 1fr), gap
+   [ ] .chart__header → flex, justify-content: space-between
+   [ ] .bar-chart → flex, align-items: flex-end, gap
+
+   TABLA DE ACTIVIDAD (Flexbox):
+   [ ] .activity__header → flex, justify-content: space-between
+
+   ============================================================
+   REFERENCIA RÁPIDA DE COLORES:
+   - Fondo app:      #f0f2f5
+   - Topbar/Sidebar: #1a1a2e
+   - Acento rojo:    #e94560
+   - Texto principal:#1a1a2e
+   - Texto suave:    #888
+   - Blanco tarjeta: #fff
+
+   REFERENCIA RÁPIDA DE PROPIEDADES:
+   Flexbox:  display:flex | flex-direction | justify-content
+             align-items | align-self | flex-wrap | flex-grow
+             flex-shrink | flex-basis | gap | order
+   Grid:     display:grid | grid-template-columns
+             grid-template-rows | grid-template-areas
+             grid-area | grid-column | grid-row
+             gap | repeat() | fr | minmax() | auto-fill
+   ============================================================ */
+
+/* Escribe tu CSS aquí ↓ */
+

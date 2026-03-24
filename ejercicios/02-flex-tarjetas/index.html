@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 2 — Flexbox: Tarjetas de Productos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       EJERCICIO 2: Tarjetas de Productos con Flexbox
+       ============================================================
+       OBJETIVO: Crear una grilla de tarjetas que se adapte al
+       ancho del contenedor usando flex-wrap.
+
+       RESULTADO ESPERADO:
+       ┌──────────┐ ┌──────────┐ ┌──────────┐
+       │  Card 1  │ │  Card 2  │ │  Card 3  │
+       │          │ │          │ │          │
+       └──────────┘ └──────────┘ └──────────┘
+       ┌──────────┐ ┌──────────┐
+       │  Card 4  │ │  Card 5  │
+       └──────────┘ └──────────┘
+
+       - Máximo 3 tarjetas por fila.
+       - Las tarjetas crecen para ocupar el espacio disponible.
+       - Todas las tarjetas tienen la misma altura en cada fila.
+       - El precio queda siempre al fondo de la tarjeta.
+
+       TUS TAREAS (busca los comentarios TODO en styles.css):
+       1. Activar Flexbox + flex-wrap en el contenedor
+       2. Definir el ancho base de cada tarjeta (flex-basis)
+       3. Permitir que las tarjetas crezcan (flex-grow)
+       4. Usar Flexbox dentro de la tarjeta para empujar el precio
+  ============================================================ -->
+
+  <div class="page">
+    <h1 class="page__title">Nuestros Productos</h1>
+
+    <div class="products">
+
+      <article class="card">
+        <div class="card__image card__image--blue"></div>
+        <div class="card__body">
+          <span class="card__badge">Nuevo</span>
+          <h2 class="card__title">Auriculares Pro</h2>
+          <p class="card__desc">Sonido envolvente de alta fidelidad con cancelación de ruido activa.</p>
+          <p class="card__price">$149.99</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__image card__image--green"></div>
+        <div class="card__body">
+          <span class="card__badge card__badge--sale">-20%</span>
+          <h2 class="card__title">Teclado Mecánico</h2>
+          <p class="card__desc">Switches Cherry MX, retroiluminación RGB personalizable y reposamuñecas incluido.</p>
+          <p class="card__price">$89.99</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__image card__image--red"></div>
+        <div class="card__body">
+          <h2 class="card__title">Mouse Inalámbrico</h2>
+          <p class="card__desc">Sensor óptico de 16000 DPI, batería de 70 horas y diseño ergonómico.</p>
+          <p class="card__price">$59.99</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__image card__image--purple"></div>
+        <div class="card__body">
+          <span class="card__badge">Top ventas</span>
+          <h2 class="card__title">Webcam 4K</h2>
+          <p class="card__desc">Videoconferencias nítidas con autoenfoque y micrófonos con reducción de ruido.</p>
+          <p class="card__price">$119.99</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__image card__image--orange"></div>
+        <div class="card__body">
+          <h2 class="card__title">Hub USB-C</h2>
+          <p class="card__desc">7 puertos: HDMI 4K, USB 3.0 x3, lector SD, USB-C PD 100W.</p>
+          <p class="card__price">$45.99</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</body>
+</html>

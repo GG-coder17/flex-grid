@@ -1,0 +1,191 @@
+/* ============================================================
+   EJERCICIO 5 — CSS Grid: Layout de Página con Áreas
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL — Grid de página
+   ============================================================ */
+.layout {
+  min-height: 100vh;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 1: Activa CSS Grid                     │
+     └─────────────────────────────────────────────┘ */
+
+  /* ┌─────────────────────────────────────────────────────────┐
+     │ TODO 2: Define las ÁREAS del grid con nombres           │
+     │ Propiedad: grid-template-areas                          │
+     │                                                         │
+     │ El layout debe verse así:                               │
+     │   fila 1 → header ocupa todo el ancho                   │
+     │   fila 2 → sidebar a la izq, main a la der              │
+     │   fila 3 → footer ocupa todo el ancho                   │
+     │                                                         │
+     │ Sintaxis:                                               │
+     │   grid-template-areas:                                  │
+     │     "header  header"                                    │
+     │     "sidebar main"                                      │
+     │     "footer  footer";                                   │
+     └─────────────────────────────────────────────────────────┘ */
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 3: Define las columnas                 │
+     │ Sidebar: 250px fijo                         │
+     │ Main: ocupa el resto con 1fr               │
+     │ Propiedad: grid-template-columns            │
+     └─────────────────────────────────────────────┘ */
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 4: Define las filas                    │
+     │ Header: 64px                                │
+     │ Main: crece con 1fr                         │
+     │ Footer: auto                                │
+     │ Propiedad: grid-template-rows               │
+     └─────────────────────────────────────────────┘ */
+}
+
+/* ============================================================
+   ASIGNACIÓN DE ÁREAS A CADA HIJO
+   ============================================================ */
+
+.layout__header {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 5: Asigna el área "header"             │
+     │ Propiedad: grid-area                        │
+     └─────────────────────────────────────────────┘ */
+}
+
+.layout__sidebar {
+  background: #fff;
+  padding: 1.5rem;
+  border-right: 1px solid #e0e0e0;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 6: Asigna el área "sidebar"            │
+     └─────────────────────────────────────────────┘ */
+}
+
+.layout__main {
+  background: #f0f2f5;
+  padding: 2rem;
+  overflow-y: auto;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 7: Asigna el área "main"               │
+     └─────────────────────────────────────────────┘ */
+}
+
+.layout__footer {
+  background: #1a1a2e;
+  color: #888;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 2rem;
+  font-size: 0.85rem;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 8: Asigna el área "footer"             │
+     └─────────────────────────────────────────────┘ */
+}
+
+/* ============================================================
+   BONUS: Layout responsivo en móvil
+   ============================================================
+   En pantallas < 768px:
+   - El sidebar pasa debajo del main
+   - Las columnas se vuelven 1 sola
+
+   ┌───────────────┐
+   │    HEADER     │
+   ├───────────────┤
+   │               │
+   │     MAIN      │
+   │               │
+   ├───────────────┤
+   │    SIDEBAR    │
+   ├───────────────┤
+   │    FOOTER     │
+   └───────────────┘
+*/
+@media (max-width: 768px) {
+  .layout {
+
+    /* ┌─────────────────────────────────────────────────────────┐
+       │ TODO 9 (BONUS): Redefine las áreas para móvil           │
+       │ 1 sola columna, sidebar abajo del main                  │
+       └─────────────────────────────────────────────────────────┘ */
+
+    /* ┌─────────────────────────────────────────────┐
+       │ TODO 10 (BONUS): Cambia las columnas a 1fr  │
+       └─────────────────────────────────────────────┘ */
+  }
+}
+
+/* ============================================================
+   Estilos de apoyo (no modificar)
+   ============================================================ */
+.layout__header-brand { font-size: 1.3rem; font-weight: 700; color: #e94560; }
+.layout__header-nav { display: flex; gap: 1.5rem; flex: 1; }
+.layout__header-nav a { color: #ccc; text-decoration: none; font-size: 0.9rem; }
+.layout__header-nav a:hover { color: #fff; }
+.layout__header-user { color: #aaa; font-size: 0.9rem; }
+
+.layout__sidebar h3 { color: #1a1a2e; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+.layout__sidebar ul { list-style: none; }
+.layout__sidebar li { padding: 0.6rem 0.5rem; color: #555; cursor: pointer; border-radius: 6px; font-size: 0.9rem; }
+.layout__sidebar li:hover { background: #f0f2f5; color: #1a1a2e; }
+
+.layout__main h1 { color: #1a1a2e; margin-bottom: 0.5rem; }
+.layout__main p { color: #666; margin-bottom: 1.5rem; }
+
+/* Stats mini-grid */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.stat__value { font-size: 1.6rem; font-weight: 700; }
+.stat__label { font-size: 0.8rem; color: #888; }
+
+.stat--blue   .stat__value { color: #667eea; }
+.stat--green  .stat__value { color: #11998e; }
+.stat--purple .stat__value { color: #c471f5; }
+.stat--orange .stat__value { color: #f7971e; }
+
+.content-placeholder {
+  background: #fff;
+  border-radius: 10px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border: 2px dashed #ddd;
+}

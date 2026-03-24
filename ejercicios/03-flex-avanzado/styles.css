@@ -1,0 +1,224 @@
+/* ============================================================
+   EJERCICIO 3 — Flexbox Avanzado: Perfil de Usuario
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f0f2f5;
+  padding: 2rem;
+}
+
+.section {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.section__title {
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.section__hint {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  background: #fff3cd;
+  padding: 0.6rem 1rem;
+  border-left: 4px solid #f0a500;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ============================================================
+   PARTE A — Tarjeta de perfil
+   ============================================================ */
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 1: Activa Flexbox y centra los ítems   │
+     │ verticalmente                               │
+     │ Propiedades: display, align-items           │
+     └─────────────────────────────────────────────┘ */
+
+  gap: 1.2rem;
+}
+
+/* Avatar */
+.profile-card__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 2: Evita que el avatar se encoja        │
+     │ cuando el contenedor sea pequeño            │
+     │ Propiedad: flex-shrink                      │
+     │ Valor: 0                                    │
+     └─────────────────────────────────────────────┘ */
+}
+
+/* Info */
+.profile-card__info {
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 3: Usa el shorthand `flex` para que    │
+     │ esta sección crezca y ocupe todo el espacio │
+     │ disponible entre el avatar y el botón.      │
+     │ Shorthand: flex: grow shrink basis          │
+     │ Ejemplo:   flex: 1 1 0                      │
+     └─────────────────────────────────────────────┘ */
+}
+
+.profile-card__name {
+  font-size: 1.2rem;
+  color: #1a1a2e;
+}
+
+.profile-card__role {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0.2rem 0 0.6rem;
+}
+
+.profile-card__stats {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Botón */
+.profile-card__btn {
+  background: #e94560;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 4: Alinea el botón al INICIO del eje   │
+     │ transversal (arriba) de forma INDEPENDIENTE │
+     │ sin afectar a los demás ítems               │
+     │ Propiedad: align-self                       │
+     │ Valor: flex-start                           │
+     └─────────────────────────────────────────────┘ */
+}
+
+/* ============================================================
+   PARTE B — Cambio de orden visual
+   ============================================================ */
+.order-demo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 5: Activa Flexbox y centra verticalmente│
+     └─────────────────────────────────────────────┘ */
+
+  gap: 1rem;
+}
+
+.order-demo__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.order-demo__role {
+  font-size: 0.9rem;
+  color: #888;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 6: Empuja el nombre y el rol hacia la  │
+     │ derecha haciendo que el rol ocupe el espacio│
+     │ Propiedad: flex-grow                        │
+     └─────────────────────────────────────────────┘ */
+}
+
+.order-demo__follow {
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 7: Mueve este botón para que aparezca  │
+     │ ANTES del nombre visualmente                │
+     │ Propiedad: order                            │
+     │ Pista: el valor por defecto de todos los    │
+     │ ítems flex es order: 0                      │
+     └─────────────────────────────────────────────┘ */
+}
+
+/* ============================================================
+   PARTE C — Barra de búsqueda
+   ============================================================ */
+.search-bar {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 2px solid #e0e0e0;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 8: Activa Flexbox y centra verticalmente│
+     └─────────────────────────────────────────────┘ */
+
+  gap: 0.8rem;
+}
+
+.search-bar__icon {
+  font-size: 1.2rem;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 9: El ícono NO debe crecer ni encoger  │
+     │ Usa el shorthand `flex`                     │
+     │ Valor: flex: 0 0 auto                       │
+     └─────────────────────────────────────────────┘ */
+}
+
+.search-bar__input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+
+  /* ┌─────────────────────────────────────────────┐
+     │ TODO 10: El input debe ocupar TODO el       │
+     │ espacio disponible                          │
+     │ Propiedad: flex-grow                        │
+     └─────────────────────────────────────────────┘ */
+}
+
+.search-bar__btn {
+  background: #667eea;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

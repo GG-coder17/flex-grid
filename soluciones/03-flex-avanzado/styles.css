@@ -1,0 +1,125 @@
+/* ============================================================
+   SOLUCIÓN — Ejercicio 3: Flexbox Avanzado
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: system-ui, sans-serif; background: #f0f2f5; padding: 2rem; }
+
+.section { max-width: 700px; margin: 0 auto 2.5rem; }
+.section__title { font-size: 1.2rem; color: #1a1a2e; margin-bottom: 0.5rem; }
+.section__hint { font-size: 0.9rem; color: #555; background: #fff3cd; border-left: 4px solid #f0a500; padding: 0.6rem 1rem; border-radius: 0 6px 6px 0; margin-bottom: 1rem; }
+
+/* Parte A */
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  /* TODO 1 ✓ */ display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.profile-card__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* TODO 2 ✓ */ flex-shrink: 0;
+}
+
+.profile-card__info {
+  /* TODO 3 ✓ */ flex: 1 1 0;
+}
+
+.profile-card__name { font-size: 1.2rem; color: #1a1a2e; }
+.profile-card__role { font-size: 0.9rem; color: #888; margin: 0.2rem 0 0.6rem; }
+.profile-card__stats { display: flex; gap: 0.6rem; font-size: 0.85rem; color: #555; }
+
+.profile-card__btn {
+  background: #e94560;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  /* TODO 4 ✓ */ align-self: flex-start;
+}
+
+/* Parte B */
+.order-demo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  /* TODO 5 ✓ */ display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.order-demo__name { font-size: 1.1rem; font-weight: 600; color: #1a1a2e; }
+
+.order-demo__role {
+  font-size: 0.9rem;
+  color: #888;
+  /* TODO 6 ✓ */ flex-grow: 1;
+}
+
+.order-demo__follow {
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  /* TODO 7 ✓ */ order: -1;
+  /* Con order: -1, el botón aparece antes que los demás
+     ítems cuyo order es 0 por defecto */
+}
+
+/* Parte C */
+.search-bar {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 2px solid #e0e0e0;
+  /* TODO 8 ✓ */ display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.search-bar__icon {
+  font-size: 1.2rem;
+  /* TODO 9 ✓ */ flex: 0 0 auto;
+}
+
+.search-bar__input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  /* TODO 10 ✓ */ flex-grow: 1;
+}
+
+.search-bar__btn {
+  background: #667eea;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
