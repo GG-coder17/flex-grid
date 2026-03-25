@@ -2,7 +2,13 @@
    EJERCICIO 3 — Flexbox Avanzado: Perfil de Usuario
    ============================================================ */
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: system-ui, sans-serif;
@@ -38,7 +44,7 @@ body {
   background: #fff;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
   /* ┌─────────────────────────────────────────────┐
      │ TODO 1: Activa Flexbox y centra los ítems   │
@@ -47,6 +53,8 @@ body {
      └─────────────────────────────────────────────┘ */
 
   gap: 1.2rem;
+  display: flex;
+  align-items: center;
 }
 
 /* Avatar */
@@ -68,11 +76,12 @@ body {
      │ Propiedad: flex-shrink                      │
      │ Valor: 0                                    │
      └─────────────────────────────────────────────┘ */
+
+  flex-shrink: 0;
 }
 
 /* Info */
 .profile-card__info {
-
   /* ┌─────────────────────────────────────────────┐
      │ TODO 3: Usa el shorthand `flex` para que    │
      │ esta sección crezca y ocupe todo el espacio │
@@ -80,6 +89,7 @@ body {
      │ Shorthand: flex: grow shrink basis          │
      │ Ejemplo:   flex: 1 1 0                      │
      └─────────────────────────────────────────────┘ */
+  flex: 1 1 0;
 }
 
 .profile-card__name {
@@ -118,6 +128,8 @@ body {
      │ Propiedad: align-self                       │
      │ Valor: flex-start                           │
      └─────────────────────────────────────────────┘ */
+
+  align-self: flex-start;
 }
 
 /* ============================================================
@@ -127,13 +139,15 @@ body {
   background: #fff;
   border-radius: 12px;
   padding: 1.2rem 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
   /* ┌─────────────────────────────────────────────┐
      │ TODO 5: Activa Flexbox y centra verticalmente│
      └─────────────────────────────────────────────┘ */
 
   gap: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .order-demo__name {
@@ -151,6 +165,8 @@ body {
      │ derecha haciendo que el rol ocupe el espacio│
      │ Propiedad: flex-grow                        │
      └─────────────────────────────────────────────┘ */
+
+  flex-grow: 1;
 }
 
 .order-demo__follow {
@@ -169,6 +185,8 @@ body {
      │ Pista: el valor por defecto de todos los    │
      │ ítems flex es order: 0                      │
      └─────────────────────────────────────────────┘ */
+
+  order: -1;
 }
 
 /* ============================================================
@@ -178,7 +196,7 @@ body {
   background: #fff;
   border-radius: 10px;
   padding: 0.5rem 1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   border: 2px solid #e0e0e0;
 
   /* ┌─────────────────────────────────────────────┐
@@ -186,6 +204,8 @@ body {
      └─────────────────────────────────────────────┘ */
 
   gap: 0.8rem;
+  display: flex;
+  align-items: center;
 }
 
 .search-bar__icon {
@@ -196,6 +216,8 @@ body {
      │ Usa el shorthand `flex`                     │
      │ Valor: flex: 0 0 auto                       │
      └─────────────────────────────────────────────┘ */
+
+  flex: 0 0 auto;
 }
 
 .search-bar__input {
@@ -209,6 +231,8 @@ body {
      │ espacio disponible                          │
      │ Propiedad: flex-grow                        │
      └─────────────────────────────────────────────┘ */
+
+  flex-grow: 1;
 }
 
 .search-bar__btn {
