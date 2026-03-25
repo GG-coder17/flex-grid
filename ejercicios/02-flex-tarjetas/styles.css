@@ -3,7 +3,13 @@
    ============================================================ */
 
 /* --- Reset base (no modificar) --- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: system-ui, sans-serif;
@@ -27,7 +33,6 @@ body {
    CONTENEDOR DE TARJETAS
    ============================================================ */
 .products {
-
   /* ┌─────────────────────────────────────────────┐
      │ TODO 1: Activa Flexbox                      │
      │ Propiedad: display                          │
@@ -44,6 +49,10 @@ body {
      │ Propiedad: gap                              │
      │ Valor sugerido: 1.5rem                      │
      └─────────────────────────────────────────────┘ */
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 /* ============================================================
@@ -53,8 +62,10 @@ body {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 
   /* ┌─────────────────────────────────────────────┐
      │ TODO 4: Define el ancho base de la tarjeta  │
@@ -76,22 +87,36 @@ body {
      │ el precio hacia abajo                       │
      │ Propiedades: display, flex-direction        │
      └─────────────────────────────────────────────┘ */
+  flex-basis: calc(33.333% - 1rem);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* --- Imagen de la tarjeta --- */
 .card__image {
   height: 180px;
 }
-.card__image--blue   { background: linear-gradient(135deg, #667eea, #764ba2); }
-.card__image--green  { background: linear-gradient(135deg, #11998e, #38ef7d); }
-.card__image--red    { background: linear-gradient(135deg, #f7971e, #ffd200); }
-.card__image--purple { background: linear-gradient(135deg, #c471f5, #fa71cd); }
-.card__image--orange { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.card__image--blue {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+.card__image--green {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+.card__image--red {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+.card__image--purple {
+  background: linear-gradient(135deg, #c471f5, #fa71cd);
+}
+.card__image--orange {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
 
 /* --- Cuerpo de la tarjeta --- */
 .card__body {
@@ -104,6 +129,10 @@ body {
      │ Propiedades: display, flex-direction,       │
      │              flex-grow                      │
      └─────────────────────────────────────────────┘ */
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 /* --- Badge --- */
@@ -119,7 +148,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.card__badge--sale { background: #e94560; }
+.card__badge--sale {
+  background: #e94560;
+}
 
 .card__title {
   font-size: 1.1rem;
@@ -137,6 +168,8 @@ body {
      │ flex-grow en el párrafo de descripción      │
      │ Propiedad: flex-grow                        │
      └─────────────────────────────────────────────┘ */
+
+  flex-grow: 1;
 }
 
 .card__price {
