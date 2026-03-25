@@ -36,6 +36,10 @@ body {
      │ Propiedad: justify-content                  │
      │ Valor sugerido: space-between               │
      └─────────────────────────────────────────────┘ */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* --- Logo --- */
@@ -44,6 +48,7 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 1px;
+  margin-right: 20px;
 }
 
 /* --- Lista de links --- */
@@ -55,6 +60,9 @@ body {
      │ horizontal usando Flexbox                   │
      │ Propiedades: display, gap                   │
      └─────────────────────────────────────────────┘ */
+
+  display: flex;
+  gap: 20px;
 }
 
 .navbar__links a {
@@ -86,6 +94,8 @@ body {
      │ justify-content: space-between?             │
      │ Pista: propiedad "margin-left"              │
      └─────────────────────────────────────────────┘ */
+
+  margin-left: auto;
 }
 
 .navbar__cta:hover {
@@ -99,7 +109,7 @@ body {
   padding: 2rem;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .demo-content h1 {
