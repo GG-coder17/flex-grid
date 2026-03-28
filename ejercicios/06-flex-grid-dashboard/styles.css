@@ -55,4 +55,167 @@
    ============================================================ */
 
 /* Escribe tu CSS aquí ↓ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: system-ui, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  color: #1a1a2e;
+}
+
+/*LAYOUT GENERAL (CSS Grid):
+[ ] .app → grid con áreas: topbar / sidebar+main
+   [ ] Columna sidebar fija en 220px, main en 1fr
+   [ ] Fila topbar en 60px, contenido en 1fr */
+.app {
+  display: grid;
+  grid-template-areas:
+    "topbar topbar"
+    "sidebar main";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 60px 1fr;
+  min-height: 100vh;
+}
+
+/*TOPBAR (Flexbox):
+   [ ] .topbar → flex, justify-content: space-between, align-items: center
+   [ ] .topbar__left → flex con gap para logo y nombre de página
+   [ ] .topbar__right → flex con gap para búsqueda, notif y avatar*/
+
+.topbar {
+  grid-area: topbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a2e;
+  color: white;
+  padding: 1rem;
+}
+
+.topbar__left {
+  display: flex;
+  gap: 1rem;
+}
+
+.topbar__right {
+  display: flex;
+  gap: 1rem;
+}
+
+.topbar__logo {
+  /*- Acento rojo:    #e94560*/
+  color: #e94560;
+}
+
+/*SIDEBAR (Flexbox):
+   [ ] .sidebar → flex en columna, justify-content: space-between
+   [ ] .sidebar__nav → flex en columna con gap
+   [ ] .sidebar__link → flex para el ícono y texto
+   [ ] .sidebar__user → flex con gap para avatar e info*/
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1a1a2e;
+  color: white;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.sidebar__link {
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar__user {
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar__link--active {
+  background-color: #e94560;
+}
+
+/*KPIs (CSS Grid):
+   [ ] .kpi-grid → repeat(auto-fill, minmax(180px, 1fr)), gap
+   [ ] .kpi → flex con gap, align-items: center*/
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.kpi {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+/*CHARTS (CSS Grid):
+   [ ] .charts-grid → 2 columnas (2fr 1fr), gap
+   [ ] .chart__header → flex, justify-content: space-between
+   [ ] .bar-chart → flex, align-items: flex-end, gap*/
+.charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.chart {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.chart__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+/*TABLA DE ACTIVIDAD (Flexbox):
+   [ ] .activity__header → flex, justify-content: space-between*/
+.activity__header {
+  display: flex;
+  justify-content: space-between;
+}
+.activity {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/*PISTAS:
+       - El layout global usa grid-template-areas (topbar, sidebar, main)
+       - Los KPIs usan grid con repeat(auto-fill, minmax(180px, 1fr))
+       - Los charts usan grid de 2 columnas (2fr 1fr)
+       - Dentro de cada widget usa Flexbox para el contenido
+       - La topbar usa Flexbox con justify-content: space-between */
